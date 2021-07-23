@@ -1,39 +1,23 @@
-const baseURL = "https://ghibliapi.herokuapp.com/people";
-let url;
+let baseURL = "https://pokeapi.co/api/v2/berry/"
 
-const searchTerm = document.querySelector(".search");
-const searchForm = document.querySelector("form");
-const submitBtn = document.querySelector(".submit");
-const nextBtn = document.querySelector(".next");
-const previousBtn = document.querySelector(".prev");
-const nav = document.querySelector("nav");
-const section = document.querySelector("section");
+let berries = document.getElementById('berries');
+let berryPic = document.querySelector('berryPic');
 
-nav.style.display = "none";
+berries.addEventListener('click', fetchQuote);
 
-let pageNumber = 0;
 
-searchForm.addEventListener("submit", fetchResults);
-nextBtn.addEventListener("click", nextPage);
-previousBtn.addEventListener("click", previousPage);
+async function fetchQuote(){
+    let response = await fetch(baseURL);
+    let json = await response.json();
+    console.log(json)
 
-function fetchResults(e){
-    e.preventdefault();
-    console.log(e);
-    url = `${baseURL}&pagenumber=${pagenumber}&q=${searchterm.value}`;
-    console.log("URL:", url);
+
 }
 
-fetch(url)
-    .then(function (result) {
-      return result.json();
-    })
-    .then(function (json) {
-      console.log(json);
-      displayResults(json);
-    });
-
-  function displayResults(json) {
-    while (section.firstChild) {
-      section.removeChild(section.firstChild)
-    }; 
+function displayBerry(json){
+    let berry = data.berries[0];
+    let berryName = berry.strberry;
+    let heading = document.createElement('p');
+    heading.innerHTML = berryName;
+    berrydiv.appendChild(heading);
+} 

@@ -1,0 +1,21 @@
+body{
+    background-color: red;
+}
+
+
+#berries{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: auto;
+}
+
+h1{
+  text-align: center;
+  font-family: pokemon;
+  src: url(./assets/PokemonHollow.ttf);
+  color: white;
+  font-size: 2rem;
+}
